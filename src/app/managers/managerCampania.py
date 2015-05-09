@@ -9,10 +9,21 @@ class managerCampania():
 	def __init__(self, managerGroup):
 		self.campanias = set()
 		
-	def agregarCampania(nombre, anio, usuario, aviso, fechaLimite):
-		grupo = self.managerGroup.agregarGrupo("Grupo" + nombre, anio, usuario) 
+		
+	def crearCampania(nombre, anio, usuario, aviso, fechaLimite):
+		for campania in self.campanias:
+			if campania.getNombre() == nombre and campania.getAnio() and grupo.getUsuario == usuario:
+				return grupo		
+		grupo = self.managerGroup.crearGrupo("Grupo" + nombre, anio, usuario) 
 		unaCampania = Campania(nombre, anio, usuario, aviso, grupo, fechaLimite)
 		
+	def getCampaniasActivasQueFinalicenEn(fecha):
+		campaniasQueFinalizanEnFecha = set()
+		for campania in self.campanias:
+			if campania.fechaLimite == fecha
+				campaniasQueFinalizanEnFecha.add(campania)
+		return campaniasQueFinalizanEnFecha
+	
 	def getCampaniasDe(usuario, anio):
 		campaniasDeUsuario = set()
 		for campania in self.campanias:
